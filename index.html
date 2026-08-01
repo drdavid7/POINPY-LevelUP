@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Juicy Climber</title>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #14171a;
+        overflow: hidden;
+        overscroll-behavior: none;
+        touch-action: none;
+        -webkit-user-select: none;
+        user-select: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+      #game {
+        width: 100%;
+        height: 100%;
+      }
+      /* Simple ad overlay used by the mock ads provider for local testing */
+      #ad-overlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        background: rgba(0, 0, 0, 0.9);
+        color: #fff;
+        z-index: 9999;
+      }
+      #ad-overlay .ad-box {
+        width: 78%;
+        max-width: 360px;
+        aspect-ratio: 4 / 3;
+        background: linear-gradient(135deg, #4a90d9, #7b5bd6);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 700;
+        text-align: center;
+      }
+      #ad-overlay .ad-timer { font-size: 15px; opacity: 0.8; }
+      #ad-overlay button {
+        padding: 10px 22px;
+        font-size: 16px;
+        border: 0;
+        border-radius: 8px;
+        background: #ffd23f;
+        color: #14171a;
+        font-weight: 700;
+      }
+      #ad-overlay button:disabled { opacity: 0.4; }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+
+    <!-- Mock ad overlay (browser testing only; real ads render natively on Android) -->
+    <div id="ad-overlay">
+      <div class="ad-box">AD<br />(sample)</div>
+      <div class="ad-timer" id="ad-timer">Reward in 3s...</div>
+      <button id="ad-close" disabled>Close</button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

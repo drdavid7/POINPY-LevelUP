@@ -1,0 +1,25 @@
+{
+  "name": "juicy-climber",
+  "version": "0.1.0",
+  "description": "A POINPY-style vertical bounce-climber (HTML5 + Phaser 3) with AdMob mediation.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "cap:copy": "npm run build && npx cap copy",
+    "cap:android": "npx cap open android",
+    "apk": "npm run build && npx cap copy && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.4.2",
+    "@capacitor/cli": "^8.4.2",
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/haptics": "^8.0.0",
+    "phaser": "^3.80.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}
